@@ -1,0 +1,28 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "title": "GOKHAN",
+        "details": "CEVRE",
+        "complete": true
+      },
+      {
+        "id": 2,
+        "title": "ALİ",
+        "details": "ACAR",
+        "complete": true
+      },
+      {
+        "id": 3,
+        "title": "FIRAT",
+        "details": "TAŞKIN",
+        "complete": true
+      },
+      {
+        "id": 4,
+        "title": "ANIL",
+        "details": "ACAR",
+        "completed": false
+      }
+    ]
+  }
