@@ -2,27 +2,18 @@
     "projects": [
       {
         "id": 1,
-        "title": "GOKHAN",
-        "details": "CEVRE",
-        "complete": true
+        "title": "FIRAT TAŞKIN",
+        "details": "ŞİŞLİ"
       },
       {
         "id": 2,
-        "title": "ALİ",
-        "details": "ACAR",
-        "complete": true
+        "name": "ANIL ACAR",
+        "address": "CENNET MAHALLESİ"
       },
       {
         "id": 3,
-        "title": "FIRAT",
-        "details": "TAŞKIN",
-        "complete": true
-      },
-      {
-        "id": 4,
-        "title": "ANIL",
-        "details": "ACAR",
-        "completed": false
+        "name": "ALİ ACAR",
+        "address": "GAZİOSMANPAŞA"
       }
     ]
   }
