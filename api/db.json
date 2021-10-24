@@ -1,9 +1,9 @@
 {
-    "projects": [
+    "developers": [
       {
         "id": 1,
-        "title": "FIRAT TAŞKIN",
-        "details": "ŞİŞLİ"
+        "name": "FIRAT TAŞKIN",
+        "address": "ŞİŞLİ"
       },
       {
         "id": 2,

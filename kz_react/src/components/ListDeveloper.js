@@ -1,19 +1,22 @@
 
 import SingleDeveloper from "./SingleDeveloper";
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 
 function ListDeveloper() {
-    const [developers] = useState([
-        {
-            id:1,
-            name:'Fırat Taşkın',
-            address:'Şişli Merkez'
-        }
-    ]);
+    const [developers,setDevelopers] = useState([]);
+
+    useEffect(() => {
+        setTimeout(()=>{
+            fetch('http://localhost:3002/developers')
+            .then(res => res.json())
+            .then(data => setDevelopers(data))
+            .catch(err => console.log(err.message));
+        },1000);
+    },[]);
 
     return (
     <div>
-        { developers.length ? developers.map((developer)=><SingleDeveloper key={developer.id} developer={developer} />) : '' }
+        { developers.length ? developers.map((developer)=><SingleDeveloper key={developer.id} developer={developer} />) : 'Loading..' }
     </div>
     );
 }

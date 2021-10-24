@@ -1,8 +1,12 @@
 <template>
+  
   <div v-if="developers.length">
     <div v-for="developer in developers" v-bind:key="developer.id">
       <SingleDeveloper v-bind:developer="developer" />
     </div>
+  </div>
+  <div v-else>
+    Loading...
   </div>
 </template>
 
@@ -15,14 +19,16 @@ export default {
   },
   data(){
     return {
-      developers:[
-        {
-          id:1,
-          name:'Fırat Taşkın',
-          address:'Şişli Merkez'
-        }
-      ],
+      developers:[],
     }
+  },
+  mounted(){
+    setTimeout(()=>{
+      fetch('http://localhost:3002/developers')
+      .then(res => res.json())
+      .then(data => this.developers = data)
+      .catch(err => console.log(err.message));
+    },1000);
   }
 }
 </script>
