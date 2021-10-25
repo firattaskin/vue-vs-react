@@ -1,19 +1,14 @@
 {
-    "developers": [
-      {
-        "id": 1,
-        "name": "FIRAT TAŞKIN",
-        "address": "ŞİŞLİ"
-      },
-      {
-        "id": 2,
-        "name": "ANIL ACAR",
-        "address": "CENNET MAHALLESİ"
-      },
-      {
-        "id": 3,
-        "name": "ALİ ACAR",
-        "address": "GAZİOSMANPAŞA"
-      }
-    ]
-  }
+  "developers": [
+    {
+      "id": 1,
+      "name": "FIRAT TAŞKIN",
+      "address": "ŞİŞLİ"
+    },
+    {
+      "id": 3,
+      "name": "ALİ ACAR",
+      "address": "GAZİOSMANPAŞA"
+    }
+  ]
+}

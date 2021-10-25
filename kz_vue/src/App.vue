@@ -1,7 +1,7 @@
 <template>
   <h1>Vue App</h1>
   <AddDeveloper @refresh="getDevelopers"/>
-  <ListDeveloper :developers="developers" />
+  <ListDeveloper :developers="developers" @delete="handleDelete" />
 </template>
 
 <script>
@@ -26,7 +26,12 @@ export default {
         .then(data => this.developers = data)
         .catch(err => console.log(err.message));
       },1000);
-    }
+    },
+    handleDelete(id){
+      this.developers = this.developers.filter((x)=>{
+        return x.id !== id;
+      });
+    },
   },
   mounted(){
     this.getDevelopers();

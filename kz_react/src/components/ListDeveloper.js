@@ -5,7 +5,9 @@ function ListDeveloper(props) {
 
     return (
     <div>
-        { props.developers.length ? props.developers.map((developer)=><SingleDeveloper key={developer.id} developer={developer} />) : 'Loading..' }
+        { props.developers.length ? props.developers.map(
+            (developer)=> <SingleDeveloper key={developer.id} developer={developer} developers={props.developers} setDevelopers={props.setDevelopers}/>
+        ) : 'Loading..' }
     </div>
     );
 }
