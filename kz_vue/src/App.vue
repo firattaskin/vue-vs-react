@@ -1,7 +1,7 @@
 <template>
   <h1>Vue App</h1>
   <AddDeveloper />
-  <ListDeveloper />
+  <ListDeveloper :developers="developers" />
 </template>
 
 <script>
@@ -12,6 +12,19 @@ export default {
   components:{
     AddDeveloper,
     ListDeveloper
+  },
+  data(){
+    return {
+      developers:[]
+    }
+  },
+  mounted(){
+    setTimeout(()=>{
+      fetch('http://localhost:3002/developers')
+      .then(res => res.json())
+      .then(data => this.developers = data)
+      .catch(err => console.log(err.message));
+    },1000);
   }
 }
 </script>
