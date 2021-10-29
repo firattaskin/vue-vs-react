@@ -1,25 +1,15 @@
-import { useState } from 'react';
+import { useState,useContext } from 'react';
+import { DeveloperContext } from '../contexts/DevelopersContext';
 import './AddDeveloper.css';
 
 function AddDeveloper(props) {
     const [name, setName] = useState('');
     const [address, setAddress] = useState('');
 
+    const {addDeveloper} = useContext(DeveloperContext);
+
     const handleSubmit = (e)=>{
-        let developer = {
-            name:name,
-            address:address
-        }
-        fetch('http://localhost:3002/developers',{
-            method:'POST',
-            headers:{ 'Content-Type':'application/json'},
-            body: JSON.stringify(developer)
-        })
-        .then(()=>{
-            console.log("a");
-            props.refresh();
-        })
-        .catch((err)=>console.log(err.message));
+        addDeveloper(name,address);
         e.preventDefault();
     }
 
