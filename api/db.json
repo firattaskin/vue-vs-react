@@ -1,28 +1,24 @@
 {
-    "projects": [
+    "developers": [
       {
         "id": 1,
-        "title": "GOKHAN",
-        "details": "CEVRE",
-        "complete": true
+        "name": "GOKHAN CEVRE",
+        "address": "Levent"
       },
       {
         "id": 2,
-        "title": "ALİ",
-        "details": "ACAR",
-        "complete": true
+        "name": "ALİ ACAR",
+        "address": "Bilinmiyor"
       },
       {
         "id": 3,
-        "title": "FIRAT",
-        "details": "TAŞKIN",
-        "complete": true
+        "name": "FIRAT TAŞKIN",
+        "address": "Mecidiyeköy"
       },
       {
         "id": 4,
-        "title": "ANIL",
-        "details": "ACAR",
-        "completed": false
+        "name": "ANIL ACAR",
+        "address": "Cennet"
       }
     ]
   }
