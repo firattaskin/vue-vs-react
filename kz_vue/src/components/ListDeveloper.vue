@@ -1,8 +1,7 @@
 <template>
-  
-  <div v-if="developers.length">
-    <div v-for="developer in developers" v-bind:key="developer.id">
-      <SingleDeveloper v-bind:developer="developer" @delete="handleDelete"/>
+  <div v-if="store.state.developers">
+    <div v-for="developer in store.state.developers" v-bind:key="developer.id">
+      <SingleDeveloper v-bind:developer="developer" />
     </div>
   </div>
   <div v-else>
@@ -12,20 +11,26 @@
 
 <script>
 import SingleDeveloper from '../components/SingleDeveloper.vue';
+import {inject} from 'vue';
 
 export default {
-  props:['developers'],
+  setup(){
+    const store = inject('store');
+    return {
+      store
+    }
+  },
   components:{
     SingleDeveloper
   },
   methods:{
-    handleDelete(id){
-      this.$emit('delete',id)
-    }
   },
   data(){
     return {
     }
+  },
+  mounted(){
+    this.store.getDevelopers();
   }
 }
 </script>

@@ -9,7 +9,15 @@
 </template>
 
 <script>
+import {inject} from 'vue';
+
 export default {
+    setup(){
+        const store = inject('store');
+        return {
+            store
+        }
+    },
     name:'AddDeveloper',
     data(){
         return {
@@ -19,20 +27,11 @@ export default {
     },
     methods:{
         handleSubmit(){
-            let developer = {
+            let new_developer = {
                 name:this.name,
                 address:this.address
             }
-            fetch('http://localhost:3002/developers',{
-                method:'POST',
-                headers:{ 'Content-Type':'application/json'},
-                body: JSON.stringify(developer)
-            })
-            .then(()=>{
-                console.log("geldi1");
-                this.$emit('refresh');
-            })
-            .catch((err)=>console.log(err.message));
+            this.store.addDeveloper(new_developer);
         }
     }
 }

@@ -13,13 +13,19 @@
 </template>
 
 <script>
+import {inject} from 'vue';
+
 export default {
+    setup(){
+      const store = inject('store');
+      return {
+        store
+      }
+    },
     props: ["developer"],
     methods:{
       deleteDeveloper(){
-        fetch('http://localhost:3002/developers/'+this.developer.id,{method:'DELETE'}).
-        then(()=>{this.$emit('delete',this.developer.id)})
-        .catch((err)=>{console.log(err.message)});
+        this.store.deleteDeveloper(this.developer.id);
       }
     },
     data() {

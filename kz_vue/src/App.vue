@@ -1,13 +1,24 @@
 <template>
   <h1>Vue App</h1>
-  <AddDeveloper @refresh="getDevelopers"/>
-  <ListDeveloper :developers="developers" @delete="handleDelete" />
+  <AddDeveloper/>
+  <ListDeveloper/>
 </template>
 
 <script>
+import {provide} from 'vue';
+
 import AddDeveloper from './components/AddDeveloper.vue';
 import ListDeveloper from './components/ListDeveloper.vue';
+
+import store from './store/developers';
+
 export default {
+  setup(){
+    provide('store', store)
+    return {
+      store,
+    }
+  },
   name: 'App',
   components:{
     AddDeveloper,
@@ -15,26 +26,11 @@ export default {
   },
   data(){
     return {
-      developers:[]
     }
   },
   methods:{
-    getDevelopers(){
-      setTimeout(()=>{
-        fetch('http://localhost:3002/developers')
-        .then(res => res.json())
-        .then(data => this.developers = data)
-        .catch(err => console.log(err.message));
-      },1000);
-    },
-    handleDelete(id){
-      this.developers = this.developers.filter((x)=>{
-        return x.id !== id;
-      });
-    },
   },
   mounted(){
-    this.getDevelopers();
   }
 }
 </script>
