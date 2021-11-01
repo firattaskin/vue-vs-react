@@ -1,24 +1,24 @@
 {
-    "developers": [
-      {
-        "id": 1,
-        "name": "GOKHAN CEVRE",
-        "address": "Levent"
-      },
-      {
-        "id": 2,
-        "name": "ALİ ACAR",
-        "address": "Bilinmiyor"
-      },
-      {
-        "id": 3,
-        "name": "FIRAT TAŞKIN",
-        "address": "Mecidiyeköy"
-      },
-      {
-        "id": 4,
-        "name": "ANIL ACAR",
-        "address": "Cennet"
-      }
-    ]
-  }
+  "developers": [
+    {
+      "id": 1,
+      "name": "GOKHAN CEVRE",
+      "address": "Levent"
+    },
+    {
+      "id": 2,
+      "name": "ALİ ACAR",
+      "address": "Bilinmiyor"
+    },
+    {
+      "id": 3,
+      "name": "FIRAT TAŞKIN",
+      "address": "Mecidiyeköy"
+    },
+    {
+      "id": 4,
+      "name": "ANIL ACAR",
+      "address": "Cennet"
+    }
+  ]
+}
